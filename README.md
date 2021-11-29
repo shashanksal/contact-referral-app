@@ -151,3 +151,19 @@ Please add notes here. Also feel free to add any further thoughts on your implem
 improvement ideas.
 
 Happy Coding 🧑‍💻
+
+---
+
+## Implemented changes
+
+- APIs added as required (create, update and delete)
+- On webapp, controller added to handle [Fetch API requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+- Utilised `useContext` for state management.
+- Added all the urls in a `constants` file. It's easier that way to manage all the urls in a centralised way. 
+- Used [Material UI Dialog](https://v4.mui.com/components/dialogs/), insted of modal for creating a modal like component. 
+- Installed [express-validator](https://yarnpkg.com/package/express-validator) for simple backend schema validations.
+
+## Potential improvements
+
+- Add and Improve tests.
+- Improve validations on frontend, as well as on backend.
