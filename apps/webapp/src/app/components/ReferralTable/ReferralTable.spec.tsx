@@ -10,7 +10,7 @@ describe('ReferralTable', () => {
 			givenName: 'John',
 			surName: 'Doe',
 			phone: '0456 123123',
-			email: 'testing@brighte.com.au'
+			email: 'testing@company.com.au'
 		},
 		{
 			id: 2,
@@ -36,7 +36,7 @@ describe('ReferralTable', () => {
 		await waitFor(() => getByText(baseElement as HTMLElement, 'Doe'));
 		await waitFor(() => getByText(baseElement as HTMLElement, '0456 123123'));
 		await waitFor(() =>
-			getByText(baseElement as HTMLElement, 'testing@brighte.com.au')
+			getByText(baseElement as HTMLElement, 'testing@company.com.au')
 		);
 
 		await waitFor(() => getByText(baseElement as HTMLElement, 'Another'));

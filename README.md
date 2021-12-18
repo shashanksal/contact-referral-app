@@ -1,11 +1,8 @@
-# Welcome to the Brighte Referral App
+# Referral App
 
-This app provides a webapp to manage internal referrals fueled by a backend REST API.
+This app provides a webapp to manage internal contacts fueled by a backend REST API.
 
-Users can view a list of entries representing referrals to contact.
-
-Currently, the app can only display existing entries, and we need to add more functionality to make sure our product
-team can use it effectively.
+Users can view a list of entries representing contacts.
 
 ## Overview
 
@@ -77,8 +74,6 @@ yarn start api
 yarn start webapp
 ```
 
-#### You are all set 🎉
-
 #### Run Tests
 
 ```shell
@@ -94,76 +89,3 @@ Hint: to reset the database to its default state, run this from the root of the 
 rm ./apps/api/prisma/dev.db*  # removes SQLite files
 yarn prisma migrate deploy    # rebuild db schema
 ```
-
-## Tasks
-
-Right now the app only provides a basic overview of existing entries of referrals, and the product team has asked us to
-extend the app with some features.
-
-Your job is to extend the app accordingly and make sure that the code base stays extendable and maintainable.
-
-* Feel free to use any additional tools or libraries where you think it is appropriate.
-* The existing code surely is not perfect, feel free to refactor things where it makes sense.
-* Make sure that you follow best practices while extending the REST API and the webapp (e.g. code structure, SOLID
-  principles etc.).
-* Try to keep the user experience in mind while implementing new features. If requirements are unclear, feel free to
-  decide what is best for the user.
-* Add implementation notes and comments at the end of this README.
-
-### Task 1: Update and delete referrals
-
-The team needs to be able to update and delete existing referral entries. We already have action buttons in the UI that
-are not functional yet, let's implement them.
-
-* The update and delete functionality for the buttons in each referral row should be implemented.
-* To update a referral, a modal box should be used with prefilled form fields.
-  Hint: [Material UI - Modal](https://material-ui.com/components/modal/)
-* The entries should be updated or deleted in the database accordingly via the API.
-
-### Task 2: Create new referral entries
-
-Users of the app want to be able to create new referrals using a form. The dev team came up with the following
-requirements:
-
-* A `Create new` button should be added below the existing referral list.
-* The button opens a modal box with a form including all relevant fields to create a new referral entry.
-* At the bottom of the modal box there should be 2 buttons: `Cancel` and `Create`.
-* A new entry should be created via the API when the form is filled correctly and the `Create` button is clicked.
-
-### Task 3: Validation
-
-We receive reports that some saved referral entries contain unusual or incomplete data. Also, we saw that we get entries
-with identical email addresses. Let's introduce input validation on the REST API side.
-
-* When creating or updating referral entries we want to validate the fields as follows:
-  * `givenName` is required and should be 2 to 200 characters long.
-  * `surName` is required and should be 2 to 200 characters long.
-  * `email` is required, should be a valid email address and be **unique**. It should not be possible to end up with
-    multiple referral entries having the same email.
-  * `phone` is required and should be a valid phone number for Australia.
-* If any of the fields are invalid, the API should respond with an appropriate response that indicates what needs to be
-  corrected
-* Frontend changes are not required at this point.
-
-## Implementation Notes
-
-Please add notes here. Also feel free to add any further thoughts on your implementation decisions and potential
-improvement ideas.
-
-Happy Coding 🧑‍💻
-
----
-
-## Implemented changes
-
-- APIs added as required (create, update and delete)
-- On webapp, controller added to handle [Fetch API requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-- Utilised `useContext` for state management.
-- Added all the urls in a `constants` file. It's easier that way to manage all the urls in a centralised way. 
-- Used [Material UI Dialog](https://v4.mui.com/components/dialogs/), insted of modal for creating a modal like component. 
-- Installed [express-validator](https://yarnpkg.com/package/express-validator) for simple backend schema validations.
-
-## Potential improvements
-
-- Add and Improve tests.
-- Improve validations on frontend, as well as on backend.

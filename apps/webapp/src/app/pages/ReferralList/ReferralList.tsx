@@ -9,7 +9,7 @@ import { REFERRALS_URL } from '../../utils/constants';
 import { ReferralContext } from '../../context/ReferralContext';
 
 const ReferralList: React.FC = () => {
-	const [referrals, setReferrals] = useState<Referrals | []>([]);
+	const [referrals, setReferrals] = useState<Referral[]>([]);
 	const { refreshCount } = useContext(ReferralContext);
 
 	useEffect(() => {

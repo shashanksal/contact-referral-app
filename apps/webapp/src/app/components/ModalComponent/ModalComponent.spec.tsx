@@ -10,7 +10,7 @@ describe('ModalComponent', () => {
 			givenName: 'John',
 			surName: 'Doe',
 			phone: '0456 123123',
-			email: 'testing@brighte.com.au'
+			email: 'testing@company.com.au'
 		}
 	];
 
@@ -19,7 +19,7 @@ describe('ModalComponent', () => {
 		givenName: 'John',
 		surName: 'Doe',
 		phone: '0456 123123',
-		email: 'testing@brighte.com.au'
+		email: 'testing@company.com.au'
 	};
 
 	it('should render title correctly', async () => {

@@ -5,7 +5,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["apps/brighte-referral/tsconfig.*?.json"]
+        "project": ["apps/app-referral/tsconfig.*?.json"]
       },
       "rules": {}
     },
